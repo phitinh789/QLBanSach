@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log In Form</title>
+    <link href="~/Content/style.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="loginbox">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <img src="~/Content/images/pic3.png" class="avatar">
+            <h1>Log In Here </h1>
+            <form>
+                <p>Username</p>
+                <input type="text" name="TenDN" placeholder="Enter UserName">
+                @ViewData["Loi1"]
+                <p>Password</p>
+                <input type="password" name="Matkhau" placeholder="Enter Password">
+                @ViewData["Loi2"]
+                <input type="submit" name="" value="Login">
+                <a href="#">Lost Your PassWord?</a> <br>
+                @Html.ActionLink("Chưa Có tài khoản? Tạo mới Ngay!", "DangKi", "NguoiDung")
+
+            </form>
+        }
+    </div>
+</body>
+</html>

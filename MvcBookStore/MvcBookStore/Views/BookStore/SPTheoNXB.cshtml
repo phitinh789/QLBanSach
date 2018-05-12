@@ -1,0 +1,27 @@
+﻿@using MvcBookStore.Models;
+@model IEnumerable<MvcBookStore.Models.SACH>
+@{
+    ViewBag.Title = "SPTheoNXB";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h3 style="text-align:center; color:red">Sách theo Nhà xuất bản</h3>
+<div class="row">
+    @foreach (var sach in Model)
+    {
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <a href="@Url.Action("Details","BookStore", new {id= sach.Masach })">
+                    <img alt="@sach.Tensach" src="~/HinhSanPham/@sach.Hinhminhhoa" class="anhminhhoa" />
+
+                    <div>
+                        <h4 style="text-align:center">
+                            @sach.Tensach
+                        </h4>
+                        <p></p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    }
+</div>

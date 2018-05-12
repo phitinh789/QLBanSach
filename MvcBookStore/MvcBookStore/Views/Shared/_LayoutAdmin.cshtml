@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Example of Bootstrap 2 Unequal Column Layout for Tablets and Desktops</title>
+    <link href="~/Content/style_images.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script src="~/Scripts/main.js"></script>
+    <script type="text/javascript">
+        tinymce.init({
+            selector: "textarea",
+            plugins: [
+                "advlist autolink lists link image charmap print preview anchor",
+                "searchreplace visualblocks code fullscreen",
+                "insertdatetime media table contextmenu paste"
+            ],
+            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+        });
+    </script>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 5px 15px;
+            padding: 0;
+            overflow: hidden;
+            background-color: lightskyblue;
+        }
+
+        li {
+            float: left;
+        }
+
+            li a {
+                font-size: 120%;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 8px 16px;
+                text-decoration: none;
+            }
+
+                li a:hover:not(.active) {
+                    background-color: darkgray;
+                }
+
+        .active {
+            background-color: lightskyblue;
+        }
+    </style>
+</head>
+<body>
+
+    <ul style="position:fixed; z-index:1000; width:98%">
+        <li>@Html.ActionLink("Trang Chủ", "Sach", "Admin")</li>
+<li>@Html.ActionLink("Quản Lý Bán Sách", "Sach", "Admin")</li>
+        <li style="float:left; margin-left:600px">
+            <input id="namanyay-search-box" name="q" size="40" type="text" placeholder="Search" />
+            <input id="namanyay-search-btn" value="Go" type="submit" />
+        </li>
+    </ul>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <div>
+                    @RenderBody();
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>                            

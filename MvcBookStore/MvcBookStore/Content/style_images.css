@@ -1,0 +1,41 @@
+﻿.img-responsive {
+    display: block;
+   width: 100%;
+   height: 500px;
+}
+.anhminhhoa{
+    width: 200px;
+    height: 300px;
+    display: block;
+    margin :0 auto;
+}
+body {
+  text-align: center;
+}
+
+#namanyay-search-btn {
+background:#0099ff;
+color:white;
+font: 'trebuchet ms', trebuchet;
+padding:10px 20px;
+border-radius:0 5px 5px 0;
+-moz-border-radius:0 5px 5px 0;
+-webkit-border-radius:0 5px 5px 0;
+
+border:0 none;
+font-weight:bold;
+}
+ 
+#namanyay-search-box {
+background: #eee;
+padding:10px;
+ border-radius:5px 0 0 5px;
+-moz-border-radius:5px 0 0 5px;
+-webkit-border-radius:5px 0 0 5px;
+
+border:0 none;
+width:400px;
+ }
+.header-login-right{
+    float: right;
+}

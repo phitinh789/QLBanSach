@@ -1,0 +1,92 @@
+﻿@model MvcBookStore.Models.SACH
+
+@{
+    ViewBag.Title = "ChitietSach";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>ChitietSach</h2>
+
+<div>
+    <h4>SACH</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+         Tên sách:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tensach)
+        </dd>
+
+        <dt>
+         Đơn Giá:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dongia)
+        </dd>
+
+        <dt>
+           Mô tả:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mota)
+        </dd>
+
+        <dt>
+       Ảnh Bìa:
+        </dt>
+
+        <dd>
+            <img src="@Url.Content("~/HinhSanPham/"+Model.Hinhminhhoa)" class="anhbia" />
+            <style>
+                .anhbia {
+                    width: 100px;
+                    height: 150px;
+                    display: block;
+                }
+            </style>
+        </dd>
+
+        <dt>
+          Tên chủ đề:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHUDE.TenChuDe)
+        </dd>
+
+        <dt>
+         Nhà Xuất Bản:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NHAXUATBAN.TenNXB)
+        </dd>
+
+        <dt>
+           Ngày Cập Nhật:
+        </dt>
+
+        <dd>
+           @String.Format("{0:dd/MM/yyyy}",Model.Ngaycapnhat) VNĐ
+        </dd>
+
+        <dt>
+          Số lượng bán:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Soluongban)
+        </dd>
+
+     
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Điều chỉnh", "Chinhsua", new { id = Model.Masach }) |
+    @Html.ActionLink("Trở về", "Sach")
+</p>
